@@ -49,7 +49,7 @@ var box = Hive.box("history");
       itemBuilder:(context, index){
         return Tile(
           hisresult: db.historylist[index],
-          onDelete: ()=>deletehistory ,
+          onDelete: ()=>deletehistory(index) ,
         );
       }
       ),   
