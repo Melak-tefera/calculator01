@@ -1,4 +1,5 @@
 
+import 'package:calculator/pages/historypage.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -65,6 +66,9 @@ class _HomePageState extends State<HomePage> {
 
   });
 
+}
+void histpage(){
+  Navigator.of(context).push(MaterialPageRoute(builder: (_)=>Historypage()));
 }
   @override
   Widget build(BuildContext context) {
