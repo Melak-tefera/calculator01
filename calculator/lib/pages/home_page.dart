@@ -85,7 +85,8 @@ class _HomePageState extends State<HomePage> {
             Row(
               children: [
                 
-                Expanded(child: ElevatedButton(
+                Expanded(
+                  child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                      fixedSize: const Size.fromHeight(80), 
                   ),
@@ -97,7 +98,9 @@ class _HomePageState extends State<HomePage> {
                     answer+="7";
                   }
                 });}, child: Text("7"))),
-                Expanded(child: ElevatedButton(
+
+                Expanded(
+                  child: ElevatedButton(
                    style: ElevatedButton.styleFrom(
                      fixedSize: const Size.fromHeight(80), 
                   ),
@@ -111,6 +114,7 @@ class _HomePageState extends State<HomePage> {
                   });
                   
                 } , child: Text("8"))),
+
                 Expanded(child: ElevatedButton(
                    style: ElevatedButton.styleFrom(
                      fixedSize: const Size.fromHeight(80), 
@@ -124,6 +128,7 @@ class _HomePageState extends State<HomePage> {
                     }
                   });
                 } , child: Text("9"))),
+                
                 Expanded(child: ElevatedButton(
                    style: ElevatedButton.styleFrom(
                      fixedSize: const Size.fromHeight(80), 
