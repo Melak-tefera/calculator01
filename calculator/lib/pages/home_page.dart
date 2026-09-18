@@ -33,6 +33,8 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       secondnumber= double.parse(answer);
 
+      process= "$process $secondnumber";
+
       
       if(operator=="+"){
         result=firstnumber + secondnumber;
