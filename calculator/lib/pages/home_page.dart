@@ -1,4 +1,5 @@
 
+import 'package:calculator/database/calculator_history.dart';
 import 'package:calculator/pages/historypage.dart';
 import 'package:flutter/material.dart';
 
@@ -16,8 +17,12 @@ class _HomePageState extends State<HomePage> {
   int secondnumber= 0;
   String operator="";
   double result = 0;
-
-  
+  final CalculatorHistory history = CalculatorHistory();
+  @override
+  void initState() {
+    super.initState();
+    history.gethistory();
+  }
 
   void operation(String op){
     setState(() {
@@ -48,9 +53,16 @@ class _HomePageState extends State<HomePage> {
         result=firstnumber.toDouble()*secondnumber.toDouble();
       }
       else{
-        result=firstnumber/secondnumber;
+        if (secondnumber == 0) {
+        answer = 'Error';
+        process = '$process 0';
+        return;
+      }
+
+      result = firstnumber / secondnumber;
       }
       answer = result.toString();
+      history.addHistory("$process = $result");
       
     });
   }
@@ -88,7 +100,7 @@ void histpage(){
                   color: Color(0xFF5699CA),
                 ),
                 child: TextButton(
-                  onPressed: (){}, 
+                  onPressed: histpage, 
                   child: Text(
                     "History",
                     style: TextStyle(

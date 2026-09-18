@@ -2,33 +2,28 @@
 import 'package:hive_flutter/adapters.dart';
 
 class CalculatorHistory {
-  List<String> historylist=[];
   var box = Hive.box("history");
-  
+  List historylist=[];
 
   
   void gethistory(){
-    var savedhistory= box.get("calhistory");
-    historylist=savedhistory.cast<String>();
+    historylist=box.get("calhistory");
 
 
   }
-
-  void updatehistory()async{
-    await box.put("calhistory", historylist);
-
+  void addHistory(String calculation) {
+    historylist.add(calculation);
+    updatehistory();
   }
 
-  void deletehistorybyline(int index)async{
+  void deleteHistory(int index) {
     historylist.removeAt(index);
-    await box.deleteAt(index);
-
-
+    updatehistory();
   }
 
-  void clearit()async{
-    historylist.clear();
-    await box.delete("calhistory");
+  void updatehistory(){
+    box.put("calhistory", historylist);
+
   }
   
 }
