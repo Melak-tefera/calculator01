@@ -9,17 +9,21 @@ const HomePage({super.key});
 }
 
 class _HomePageState extends State<HomePage> {
+  String process= "";
   String answer="0";
   double firstnumber= 0;
   double secondnumber= 0;
   String operator="";
   double result = 0;
 
+  
+
   void operation(String op){
     setState(() {
       firstnumber= double.parse(answer);
       operator=op;
       answer="";
+      process="$firstnumber $operator ";
       
 
     });
@@ -28,6 +32,7 @@ class _HomePageState extends State<HomePage> {
   void equalto(){
     setState(() {
       secondnumber= double.parse(answer);
+
       
       if(operator=="+"){
         result=firstnumber + secondnumber;
@@ -54,12 +59,14 @@ class _HomePageState extends State<HomePage> {
     answer = "0";
     firstnumber = 0;
     operator = "";
+    process="";
 
   });
 
 }
   @override
   Widget build(BuildContext context) {
+    
 
     return Scaffold(
       body: Column(
@@ -69,14 +76,29 @@ class _HomePageState extends State<HomePage> {
             height: 350,
             width: 400,
            alignment: Alignment.bottomRight,
-            child: Text(
-              answer,
-              textAlign: TextAlign.right,
-              style: TextStyle(
-                fontSize: 35,
-                fontWeight: FontWeight.bold,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  process,
+                  textAlign: TextAlign.right,
+                  style: TextStyle(
+                    fontSize: 35,
+                    fontWeight: FontWeight.bold,
+                
+                  ),
+                ),
 
-              ),
+                Text(
+                  answer,
+                  textAlign: TextAlign.right,
+                  style: TextStyle(
+                    fontSize: 35,
+                    fontWeight: FontWeight.bold,
+                
+                  ),
+                ),
+              ],
             ),
           ),
 
