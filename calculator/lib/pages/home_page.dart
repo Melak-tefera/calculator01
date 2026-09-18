@@ -11,8 +11,8 @@ const HomePage({super.key});
 class _HomePageState extends State<HomePage> {
   String process= "";
   String answer="0";
-  double firstnumber= 0;
-  double secondnumber= 0;
+  int firstnumber= 0;
+  int secondnumber= 0;
   String operator="";
   double result = 0;
 
@@ -20,10 +20,10 @@ class _HomePageState extends State<HomePage> {
 
   void operation(String op){
     setState(() {
-      firstnumber= double.parse(answer);
+      firstnumber= int.parse(answer);
       operator=op;
       answer="";
-      process="$firstnumber $operator ";
+      process="$firstnumber $operator";
       
 
     });
@@ -31,20 +31,20 @@ class _HomePageState extends State<HomePage> {
 
   void equalto(){
     setState(() {
-      secondnumber= double.parse(answer);
+      secondnumber= int.parse(answer);
 
       process= "$process $secondnumber";
 
       
       if(operator=="+"){
-        result=firstnumber + secondnumber;
+        result=firstnumber.toDouble() + secondnumber.toDouble();
 
       }
       else if(operator=="-"){
-        result=firstnumber-secondnumber;
+        result=firstnumber.toDouble() - secondnumber.toDouble();
       }
       else if(operator=="*"){
-        result=firstnumber*secondnumber;
+        result=firstnumber.toDouble()*secondnumber.toDouble();
       }
       else{
         result=firstnumber/secondnumber;
