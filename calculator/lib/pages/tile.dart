@@ -24,7 +24,7 @@ class Tile extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(
-            width: 1,
+            width: 1.5,
             color: const Color.fromARGB(
               127,
               245,
