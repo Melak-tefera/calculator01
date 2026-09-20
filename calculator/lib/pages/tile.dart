@@ -51,7 +51,7 @@ class Tile extends StatelessWidget {
               onPressed: onDelete,
               icon: const Icon(
                 Icons.delete,
-                color: Color.fromARGB(161, 244, 67, 54),
+                color:Colors.red,
               ),
             ),
           ],
