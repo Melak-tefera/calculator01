@@ -114,7 +114,7 @@ void histpage(){
             Container(
               color: Colors.white,
               height: 350,
-              width: 401,
+              width: 400,
              alignment: Alignment.bottomRight,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
