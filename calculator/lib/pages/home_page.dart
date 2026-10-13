@@ -94,7 +94,7 @@ void histpage(){
             Align(
               alignment: AlignmentGeometry.bottomRight,
               child: Container(
-                margin: EdgeInsets.fromLTRB(0, 10, 10, 0),
+                margin: EdgeInsets.fromLTRB(0, 11, 10, 0),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
                   color: Color(0xFF5699CA),
